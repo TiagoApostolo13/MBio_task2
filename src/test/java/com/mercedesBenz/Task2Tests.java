@@ -22,13 +22,14 @@ public class Task2Tests {
     private WebDriverWait webDriverWait;
 
     @Test
-    public void testTask2() {
+    public void testTask2() throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         //    Open the Mercedes-Benz Shop used cars in Australian market.
+        System.out.println("Open the Mercedes-Benz Shop used cars in Australian market.");
         driver.get("https://shop.mercedes-benz.com/en-au/shop/vehicle/srp/demo?sort=relevance-demo&assortment=vehicle");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='app']/div[1]")));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -62,16 +63,27 @@ public class Task2Tests {
         driver.findElement(By.tagName("input")).sendKeys("2007");
         // Purpose: Private.
         driver.findElement(By.className("wb-radio-control__indicator")).click();
-
+        Thread.sleep(3000);
         // Click Continue
+        System.out.println("Click Continue");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='app']/div[1]/header/div/div[4]/div[1]/div/div[2]/button")));
         driver.findElement(By.xpath("//*[@id='app']/div[1]/header/div/div[4]/div[1]/div/div[2]/button")).click();
-
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+Thread.sleep(3000);
 
         //        Click the filter button (top-left blue button)
 
+        WebElement sidebar = driver.findElement(By.className("sidebar"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", sidebar);
+        driver.findElement(By.className("filter-toggle")).click();
+        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
 //        Under the “Pre-Owned” tab, apply the following choices:
+        driver.findElement(By.xpath("//span[contains(text(), 'Pre-Owned')]/../../button")).click();
+        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+
 //        Colour:
 //        Navigate to the Vehicle Details of the most expensive car on the filtered results.
 //        Save the following car details to a file:
@@ -85,5 +97,11 @@ public class Task2Tests {
 
     }
 }
+
+//IMPROVE
+//fazer validações
+//Separar implementaçao
+//colocar logs
+//melhorar tempos de execucao no driver (meter mais lento)
 
 
