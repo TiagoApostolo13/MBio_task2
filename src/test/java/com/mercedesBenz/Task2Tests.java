@@ -31,8 +31,12 @@ public class Task2Tests {
         //    Open the Mercedes-Benz Shop used cars in Australian market.
         System.out.println("Open the Mercedes-Benz Shop used cars in Australian market.");
         driver.get("https://shop.mercedes-benz.com/en-au/shop/vehicle/srp/demo?sort=relevance-demo&assortment=vehicle");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='app']/div[1]")));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        //Wait for loader finish
+//        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("dcp-loader") ));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath ("//div[@class='dcp-loader']") ));
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='app']/div[1]")));
+        // wait for cookie banner get ready
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 
         WebElement elem = driver.findElement(By.xpath("//*[@id='app']/div[1]/cmm-cookie-banner"));
@@ -72,19 +76,27 @@ public class Task2Tests {
 Thread.sleep(3000);
 
         //        Click the filter button (top-left blue button)
-
+        System.out.println("Click the filter button");
         WebElement sidebar = driver.findElement(By.className("sidebar"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", sidebar);
         driver.findElement(By.className("filter-toggle")).click();
         Thread.sleep(3000);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
-//        Under the “Pre-Owned” tab, apply the following choices:
+//        Select the “Pre-Owned” tab:
+        System.out.println("apply the following choices:");
         driver.findElement(By.xpath("//span[contains(text(), 'Pre-Owned')]/../../button")).click();
         Thread.sleep(3000);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
-//        Colour:
+//       Open colour drop:
+        //TODO colocar numa funçao a parte o wait do loader
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath ("//div[@class='dcp-loader']") ));
+        System.out.println("colour drop");
+        driver.findElement(By.xpath("//p[contains(text(), 'Colour')]/../../../div")).click();
+        Thread.sleep(3000);
+
+        //*[@id="app"]/div[1]/main/div[2]/div[1]/div[2]/div[1]/div/div/div[1]/div[4]/div[7]/div/div[1]/p
 //        Navigate to the Vehicle Details of the most expensive car on the filtered results.
 //        Save the following car details to a file:
 //        VIN number
@@ -98,10 +110,11 @@ Thread.sleep(3000);
     }
 }
 
-//IMPROVE
+// TODO IMPROVE
 //fazer validações
 //Separar implementaçao
 //colocar logs
 //melhorar tempos de execucao no driver (meter mais lento)
+// trocar os waits do loader para wait para o elemento esta visivel
 
 
