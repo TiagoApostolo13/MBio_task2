@@ -11,7 +11,6 @@ import java.time.Duration;
 
 public class LocationModal extends NavigationUtil {
 
-    private By continueButtonLocator = By.xpath("//*[@id='app']/div[1]/header/div/div[4]/div[1]/div/div[2]/button");
     private By dropdownSelectorLocator = By.tagName("wb-select");
     private By postalCodeInputLocator = By.tagName("input");
     private By checkBoxLocator = By.className("wb-radio-control__indicator");

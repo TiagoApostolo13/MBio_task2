@@ -11,9 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class HomePage extends NavigationUtil {
-    private By sideBarLocator = By.className("sidebar");
-    private By filterLocator = By.className("filter-toggle");
-    private By tabLocator = By.xpath("//span[contains(text(), 'Pre-Owned')]/../../button");
+
     private By colourFilterLocator = By.xpath("//p[contains(text(), 'Colour')]/../../../div");
 
     public HomePage(WebDriver driver) {
