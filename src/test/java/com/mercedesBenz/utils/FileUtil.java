@@ -1,5 +1,6 @@
-package com.mercedesBenz;
+package com.mercedesBenz.utils;
 
+import com.mercedesBenz.utils.NavigationUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

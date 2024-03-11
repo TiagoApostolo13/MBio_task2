@@ -1,6 +1,6 @@
 package com.mercedesBenz.pages;
 
-import com.mercedesBenz.NavigationUtil;
+import com.mercedesBenz.utils.NavigationUtil;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;

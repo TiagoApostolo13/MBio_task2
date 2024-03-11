@@ -1,6 +1,6 @@
 package com.mercedesBenz.pages;
 
-import com.mercedesBenz.NavigationUtil;
+import com.mercedesBenz.utils.NavigationUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

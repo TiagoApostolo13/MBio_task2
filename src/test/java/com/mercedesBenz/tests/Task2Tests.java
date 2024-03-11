@@ -1,7 +1,7 @@
 package com.mercedesBenz.tests;
 
-import com.mercedesBenz.FileUtil;
-import com.mercedesBenz.NavigationUtil;
+import com.mercedesBenz.utils.FileUtil;
+import com.mercedesBenz.utils.NavigationUtil;
 import com.mercedesBenz.pages.CookieBanner;
 import com.mercedesBenz.pages.HomePage;
 import com.mercedesBenz.pages.LocationModal;
