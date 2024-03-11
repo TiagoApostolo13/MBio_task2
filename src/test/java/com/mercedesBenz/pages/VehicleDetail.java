@@ -18,13 +18,13 @@ public class VehicleDetail extends NavigationUtil {
 
 
     public void clickEnquireNowButton() {
-        //        In the side vehicle details click “Enquire Now”
+        //        In the side vehicle details click Enquire Now
         WebElement expertButton = driver.findElement(By.xpath("//button[contains(text(), ' Enquire Now ')]"));
         wait.until(ExpectedConditions.elementToBeClickable(expertButton)).click();
     }
 
     public void fillEmailInput() throws InterruptedException {
-        //        Fill the “Contact Details and Account Creation” form with invalid data. (e.g. with an invalid email format)
+        //        Fill the Contact Details and Account Creation form with invalid data. (e.g. with an invalid email format)
         WebElement inputEmail = driver.findElement(By.xpath("/html/body/div/div[1]/main/div/div[1]/div[7]/div/div[1]/div/div[2]/div/div/div/div/div[1]/form/div/div[3]/wb-input-control/wb-input/input"));
         inputEmail.sendKeys("test.com");
         Thread.sleep(5000);
@@ -32,7 +32,7 @@ public class VehicleDetail extends NavigationUtil {
     }
 
     public void clickProceedButton() {
-        //        Click "Proceed" and validate the error.
+        //        Click Proceed and validate the error.
         WebElement proceedButton = driver.findElement(By.xpath("//button[contains(text(), ' Proceed ')]"));
         wait.until(ExpectedConditions.elementToBeClickable(proceedButton)).click();
     }

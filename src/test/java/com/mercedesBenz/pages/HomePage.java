@@ -32,7 +32,7 @@ public class HomePage extends NavigationUtil {
     }
 
     public void selectTab() throws InterruptedException {
-        System.out.println("apply the following choices:");
+        System.out.println("Select Tab");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         driver.findElement(By.xpath("//span[contains(text(), 'Pre-Owned')]/../../button")).click();
 

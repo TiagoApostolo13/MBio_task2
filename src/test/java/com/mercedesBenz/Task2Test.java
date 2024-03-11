@@ -1,4 +1,4 @@
-package com.mercedesBenz.tests;
+package com.mercedesBenz;
 
 import com.mercedesBenz.utils.FileUtil;
 import com.mercedesBenz.utils.NavigationUtil;
@@ -13,25 +13,39 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 @DisplayName(" Validate the negative path of enquiring the highest price at Mercedes-Benz")
-public class Task2Tests  {
+public class Task2Test {
 
     private WebDriver driver;
 
+    public void chooseBrowser(String browser){
+        if (browser.equalsIgnoreCase("chrome")){
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        } else if (browser.equalsIgnoreCase("firefox")){
+            WebDriverManager.chromedriver().setup();
+            driver = new FirefoxDriver();
+        }
+    }
+
     @BeforeEach
     public void setUp() throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
+
+//        WebDriverManager.chromedriver().setup();
 //        WebDriverManager.firefoxdriver().setup();
-         driver = new ChromeDriver();
+//         driver = new ChromeDriver();
 //        WebDriver driver = new FirefoxDriver();
+        chooseBrowser(System.getProperty("browser"));
+//        chooseBrowser("chrome");
         driver.manage().window().maximize();
         Thread.sleep(2000);
     }
 
     @Test
-    public void testTask2() throws InterruptedException {
+    public void task2Test() throws InterruptedException {
 
 
         //    Open the Mercedes-Benz Shop used cars in Australian market.
