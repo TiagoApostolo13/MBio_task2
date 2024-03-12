@@ -1,41 +1,32 @@
-#Testes Selenium com Maven
+#Selenium Tests with Maven
 
-Este projeto contém testes automatizados usando Selenium WebDriver e é configurado para ser executado com o Maven.
+This project contains automated tests using Selenium WebDriver and is configured to be run with Maven.
 
-##Pré-requisitos
+##Prerequisites
 
-Antes de executar os testes, certifique-se de ter o seguinte instalado em sua máquina:
+Before running the tests, make sure you have the following installed on your machine:
 
-- Java Development Kit (JDK) 8 ou superior
+- Java Development Kit (JDK) 8 or higher
 - Maven
-- Chrome WebDriver (ou outro WebDriver compatível com o seu navegador)
 
-##Configuração do WebDriver
+##Running the Tests
 
-Certifique-se de ter o WebDriver adequado para o seu navegador instalado e configurado corretamente. Para o Chrome, você pode baixar o WebDriver mais recente em Chrome WebDriver Downloads.
+To run the tests, follow these steps:
 
-##Executando os testes
+1. Clone this repository to your local machine:
 
-Para executar os testes, siga estes passos:
+git clone https://github.com/TiagoApostolo13/MBio_task2.git
 
-1. Clone este repositório em sua máquina local:
+2. Navigate to the project directory:
 
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+cd repository-name
 
-2. Navegue até o diretório do projeto:
+3. Run the tests using the following Maven command, specifying the desired browser chrome or firefox (in this example, we are using Chrome):
 
-cd nome-do-repositorio
+mvn clean test -Dbrowser=chrome (or firefox)
 
-3. Execute os testes com o seguinte comando Maven, especificando o navegador desejado (neste exemplo, estamos usando o Chrome):
+This will clean previous test results, compile the code, and execute the automated tests in the Chrome browser.
 
-mvn clean test -Dbrowser=chrome
+##Customization
 
-Isso irá limpar os resultados de testes anteriores, compilar o código e executar os testes automatizados no navegador Chrome.
-
-Personalização
-
-Você pode personalizar o navegador e outras configurações de teste editando o arquivo pom.xml e o código-fonte do teste conforme necessário.
-
-Suporte
-
-Se você encontrar problemas ou tiver dúvidas sobre este projeto, sinta-se à vontade para abrir uma issue aqui no GitHub.
+You can customize the browser and other test settings by editing the pom.xml file and the test source code as needed.

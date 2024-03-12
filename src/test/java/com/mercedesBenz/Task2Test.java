@@ -28,25 +28,20 @@ public class Task2Test {
         } else if (browser.equalsIgnoreCase("firefox")){
             WebDriverManager.chromedriver().setup();
             driver = new FirefoxDriver();
+        } else {
+            throw new RuntimeException("Invalid browser");
         }
     }
 
     @BeforeEach
     public void setUp() throws InterruptedException {
-
-//        WebDriverManager.chromedriver().setup();
-//        WebDriverManager.firefoxdriver().setup();
-//         driver = new ChromeDriver();
-//        WebDriver driver = new FirefoxDriver();
         chooseBrowser(System.getProperty("browser"));
-//        chooseBrowser("chrome");
         driver.manage().window().maximize();
         Thread.sleep(2000);
     }
 
     @Test
     public void task2Test() throws InterruptedException {
-
 
         //    Open the Mercedes-Benz Shop used cars in Australian market.
         NavigationUtil navigation = new NavigationUtil(driver);
