@@ -25,7 +25,7 @@ cd repository-name
 
 mvn clean test -Dbrowser=chrome (or firefox)
 
-This will clean previous test results, compile the code, and execute the automated tests in the Chrome browser.
+This will clean previous test results, compile the code, and execute the automated tests in the browser.
 
 ##Customization
 

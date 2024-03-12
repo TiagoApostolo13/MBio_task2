@@ -23,11 +23,10 @@ public class HomePage extends NavigationUtil {
 
     public void openFilter() throws InterruptedException {
         System.out.println("Click the filter button");
+        Thread.sleep(5000);
         WebElement sidebar = driver.findElement(By.className("sidebar"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", sidebar);
         driver.findElement(By.className("filter-toggle")).click();
-
-        Thread.sleep(5000);
 
     }
 
