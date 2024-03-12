@@ -23,7 +23,7 @@ cd repository-name
 
 3. Run the tests using the following Maven command, specifying the desired browser chrome or firefox (in this example, we are using Chrome):
 
-mvn clean test -Dbrowser=chrome (or firefox)
+mvn clean test -Dbrowser=chrome
 
 This will clean previous test results, compile the code, and execute the automated tests in the browser.
 
