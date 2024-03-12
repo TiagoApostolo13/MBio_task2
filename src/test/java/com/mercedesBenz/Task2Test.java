@@ -68,11 +68,10 @@ public class Task2Test {
         homePage.selectTab();
         homePage.selectColour();
 
-        Thread.sleep(3000);
-
+        // Filter results by price descending
         homePage.selectByPriceDescending();
 
-        // Navigate to the Vehicle Details of the most expensive car on the filtered results.
+        // Navigate to the Vehicle Details of the most expensive car on the filtered results (first result).
         homePage.selectMostExpensiveCar();
 
         // Save car details to a file:
