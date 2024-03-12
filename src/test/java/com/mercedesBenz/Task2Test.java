@@ -22,10 +22,10 @@ public class Task2Test {
     private WebDriver driver;
 
     public void chooseBrowser(String browser){
-        if (browser.equalsIgnoreCase("chrome")){
+        if (browser != null && browser.equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-        } else if (browser.equalsIgnoreCase("firefox")){
+        } else if (browser != null && browser.equalsIgnoreCase("firefox")){
             WebDriverManager.chromedriver().setup();
             driver = new FirefoxDriver();
         } else {
